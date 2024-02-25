@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset("panel/vendors/slick/slick-theme.css")}}">
     <link rel="stylesheet" href="{{asset("panel/vendors/vmap/jqvmap.min.css")}}">
     <link rel="stylesheet" href="{{asset("panel/assets/css/app.css")}}" type="text/css">
+    @livewireStyles
 </head>
 <body class="small-navigation">
 
@@ -19,6 +20,8 @@
 @include('admin.layouts.header');
 
 @yield('content')
+
+@livewireScripts
 <script src="{{asset("panel/vendors/bundle.js")}}"></script>
 <script src="{{asset("panel/vendors/slick/slick.min.js")}}"></script>
 <script src="{{asset("panel/vendors/vmap/jquery.vmap.min.js")}}"></script>
