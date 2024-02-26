@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', function (){
-        return view('admin.index');
-    })->name('admin');
+    Route::get('/admin', [PanelController::class,"index"])->name('Panel');
+    Route::resource('admin/user',UserController::class);
 
 });
 
